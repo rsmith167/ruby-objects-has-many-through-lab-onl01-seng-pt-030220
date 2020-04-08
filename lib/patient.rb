@@ -13,7 +13,7 @@ class Patient
     Appointment.new(date, self, doctor)
   end
   def appointments
-    Appointment.select {|x| x.patient == self}
+    Appointment.all.select {|x| x.patient == self}
   end
   def doctors
     self.appointments.each {|x| return x.doctor}
