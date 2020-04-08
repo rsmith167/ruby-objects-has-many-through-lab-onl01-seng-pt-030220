@@ -16,7 +16,7 @@ class Patient
     Appointment.select {|x| x.patient == self}
   end
   def doctors
-    
+    self.appointments.each {|x| return x.doctor}
   end
   
 end
